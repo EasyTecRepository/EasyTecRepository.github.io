@@ -9,7 +9,7 @@
 --main-bg-color:black;
 --body-before:#00ff771a;
 --body-after: #00ff7733;
---body-animation: flicker;
+--body-animation: none;
 --logo: url(https://raw.githubusercontent.com/EasyTecRepository/theme.park/cbcee567c2428153ad2800c4bf74fd3d154e9029/css/addons/unraid/login-page/retro-terminal/green_unraid.svg) center no-repeat;
 --text-color: #37f592;
 --input-color: #37f592;
