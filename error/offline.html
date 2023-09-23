@@ -107,23 +107,54 @@
                     </div>`;
             }
         }
-        // Function to check if the page was accessed through a link
-        function pageAccessedThroughLink() {
-            // Check if the referring URL is different from the current URL
-            return document.referrer !== '' && document.referrer !== window.location.href;
+        var targetDomain = ''; // Variable for the target domain
+
+        // Function to set the target domain based on the current domain
+        function setTargetDomain() {
+            // Replace this with your own domain detection and mapping logic
+            var currentDomain = window.location.hostname;
+
+            // Example: If the current domain is "domain1.com"
+            if (currentDomain === 'domain1.com') {
+                targetDomain = 'https://domain1.com'; // Set the target domain accordingly
+            } else if (currentDomain === 'domain2.com') {
+                targetDomain = 'https://domain2.com'; // Set the target domain accordingly
+            }
+            // Add more domain mappings here
+
+            // If no matching domain is found, set a default target domain
+            if (targetDomain === '') {
+                targetDomain = 'https://example.com'; // Example of a default target domain
+            }
         }
 
         // Function for automatic redirection every two minutes
         function automaticRedirect() {
-            // Check if the page was not accessed through a link
-            if (!pageAccessedThroughLink()) {
-                // Redirect to the previous page
-                window.location.href = document.referrer;
+            // Check if the page was accessed from a different domain
+            if (window.location.hostname !== targetDomain) {
+                // Redirect to the target domain
+                window.location.href = targetDomain;
+            } else {
+                // Increase the count of redirections
+                redirectCount++;
+
+                // Check if the maximum number of redirections is reached (e.g., 10 times)
+                if (redirectCount <= 10) {
+                    // Refresh the page after two minutes
+                    setTimeout(function() {
+                        window.location.reload();
+                    }, 120000); // 120,000 milliseconds equals two minutes
+                }
             }
         }
 
-        // Set a timer for automatic redirection every two minutes
-        setInterval(automaticRedirect, 120000); // 120000 milliseconds equals two minutes
+        var redirectCount = 0; // Counter for the number of redirections
+
+        // Set the target domain based on the current domain
+        setTargetDomain();
+
+        // Set the timer for the initial automatic redirection
+        setTimeout(automaticRedirect, 120000); // 120,000 milliseconds equals two minutes
     </script>
 </head>
 <body>
