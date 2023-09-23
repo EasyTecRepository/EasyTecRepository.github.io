@@ -115,8 +115,8 @@
             window.location.href = previousPage;
         }
 
-        // Set a timer to trigger the redirection after 2 minutes
-        setTimeout(redirectToPreviousPage, 10000); // 120000 milliseconds = 2 minutes
+        // Attach a click event listener to the button
+        document.getElementById('redirectButton').addEventListener('click', redirectToPreviousPage);
     </script>
 </head>
 <body>
