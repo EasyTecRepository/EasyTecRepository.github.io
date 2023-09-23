@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<!--This code was written for Easy Tec by ChatGPT-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website offline</title>
+    <style>
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        h1 {
+            color: #e74c3c;
+        }
+
+        p {
+            color: #333;
+        }
+    </style>
+    <script>
+        var currentLanguage = 'en'; // Default language is English
+
+        function detectUserLanguage() {
+            // Get the user's preferred language in BCP-47 format
+            var userLanguage = navigator.language || navigator.userLanguage;
+
+            // Check if the user's language is German
+            if (userLanguage.startsWith('de')) {
+                currentLanguage = 'de';
+                document.getElementById('message').innerHTML = `
+                    <div class="container">
+                        <h1>Aktuell nicht erreichbar</h1>
+                        <p>Wir entschuldigen uns für die Unannehmlichkeiten, aber diese Website ist aufgrund von Störungen derzeit nicht verfügbar.</p>
+                        <p>Wir arbeiten hart daran, das Problem zu beheben. Sie können den aktuellen Status jederzeit auf unserer <a target="_blank" href="https://easytecstatus.statuspage.io/">Statusseite</a> prüfen.</p>
+                        <p>Diese Seite wird alle zwei Minuten automatisch aktualisiert, sodass Sie sofort benachrichtigt werden, wenn die Website wieder online ist.</p>
+                        <p>Wenn dieses Problem über einen längeren Zeitraum besteht oder auf der Statusseite kein aktiver Fehler angezeigt wird, kontaktieren Sie uns bitte per <a href="mailto:services@easytec.tech">E-Mail</a>.</p>
+                        <p>Vielen Dank für Ihr Verständnis und Ihre Geduld, während wir das Problem beheben.</p>
+                        <button id="toggleButton" onclick="toggleLanguage()">Switch to English</button>
+                    </div>`;
+            }
+            // Check if the user's language is English
+            else if (userLanguage.startsWith('en')) {
+                currentLanguage = 'en';
+                document.getElementById('message').innerHTML = `
+                    <div class="container">
+                        <h1>Currently Unavailable</h1>
+                        <p>We apologize for the inconvenience, but this website is currently unavailable due to disruptions.</p>
+                        <p>We are working diligently to resolve the issue. You can check the current status anytime on our <a target="_blank" href="https://easytecstatus.statuspage.io/">status page</a>.</p>
+                        <p>This page will automatically refresh every two minutes so that you will be promptly notified when the website is back online.</p>
+                        <p>If this issue persists for an extended period or if no active error is displayed on the status page, please contact us via <a href="mailto:services@easytec.tech">email</a>.</p>
+                        <p>Thank you for your understanding and patience as we work to resolve the issue.</p>
+                        <button id="toggleButton" onclick="toggleLanguage()">Switch to German</button>
+                    </div>`;
+            }
+            // Default handling for other languages
+            else {
+                currentLanguage = 'en';
+                document.getElementById('message').innerHTML = `
+                    <div class="container">
+                        <h1>Currently Unavailable</h1>
+                        <p>We apologize for the inconvenience, but this website is currently unavailable due to disruptions.</p>
+                        <p>We are working diligently to resolve the issue. You can check the current status anytime on our <a target="_blank" href="https://easytecstatus.statuspage.io/">status page</a>.</p>
+                        <p>This page will automatically refresh every two minutes so that you will be promptly notified when the website is back online.</p>
+                        <p>If this issue persists for an extended period or if no active error is displayed on the status page, please contact us via <a href="mailto:services@easytec.tech">email</a>.</p>
+                        <p>Thank you for your understanding and patience as we work to resolve the issue.</p>
+                        <button id="toggleButton" onclick="toggleLanguage()">Switch to German</button>
+                    </div>`;
+            }
+        }
+
+        function toggleLanguage() {
+            // Toggle between English and German
+            if (currentLanguage === 'en') {
+                currentLanguage = 'de';
+                document.getElementById('message').innerHTML = `
+                    <div class="container">
+                        <h1>Aktuell nicht erreichbar</h1>
+                        <p>Wir entschuldigen uns für die Unannehmlichkeiten, aber diese Website ist aufgrund von Störungen derzeit nicht verfügbar.</p>
+                        <p>Wir arbeiten hart daran, das Problem zu beheben. Sie können den aktuellen Status jederzeit auf unserer <a target="_blank" href="https://easytecstatus.statuspage.io/">Statusseite</a> prüfen.</p>
+                        <p>Diese Seite wird alle zwei Minuten automatisch aktualisiert, sodass Sie sofort benachrichtigt werden, wenn die Website wieder online ist.</p>
+                        <p>Wenn dieses Problem über einen längeren Zeitraum besteht oder auf der Statusseite kein aktiver Fehler angezeigt wird, kontaktieren Sie uns bitte per <a href="mailto:services@easytec.tech">E-Mail</a>.</p>
+                        <p>Vielen Dank für Ihr Verständnis und Ihre Geduld, während wir das Problem beheben.</p>
+                        <button id="toggleButton" onclick="toggleLanguage()">Switch to English</button>
+                    </div>`;
+            } else {
+                currentLanguage = 'en';
+                document.getElementById('message').innerHTML = `
+                    <div class="container">
+                        <h1>Currently Unavailable</h1>
+                        <p>We apologize for the inconvenience, but this website is currently unavailable due to disruptions.</p>
+                        <p>We are working diligently to resolve the issue. You can check the current status anytime on our <a target="_blank" href="https://easytecstatus.statuspage.io/">status page</a>.</p>
+                        <p>This page will automatically refresh every two minutes so that you will be promptly notified when the website is back online.</p>
+                        <p>If this issue persists for an extended period or if no active error is displayed on the status page, please contact us via <a href="mailto:services@easytec.tech">email</a>.</p>
+                        <p>Thank you for your understanding and patience as we work to resolve the issue.</p>
+                        <button id="toggleButton" onclick="toggleLanguage()">Switch to German</button>
+                    </div>`;
+            }
+        }
+        // JavaScript function for redirection
+        function redirectToPreviousPage() {
+            // Use the previous page (referrer) as the target URL
+            var targetURL = document.referrer;
+            
+            // Perform the actual redirection
+            window.location.href = targetURL;
+        }
+
+        // Function to trigger redirection every two minutes
+        function startAutomaticRedirection() {
+            setTimeout(redirectToPreviousPage, 120000); // 120000 milliseconds equals 2 minutes
+        }
+        // Start automatic redirection when the page loads
+        startAutomaticRedirection();
+    </script>
+</head>
+<body>
+    <div id="message" class="container">
+        <h1>Currently Unavailable</h1>
+        <p>We apologize for the inconvenience, but this website is currently unavailable due to disruptions.</p>
+        <p>We are working diligently to resolve the issue. You can check the current status anytime on our <a target="_blank" href="https://easytecstatus.statuspage.io/">status page</a>.</p>
+        <p>This page will automatically refresh every two minutes so that you will be promptly notified when the website is back online.</p>
+        <p>If this issue persists for an extended period or if no active error is displayed on the status page, please contact us via <a href="mailto:services@easytec.tech">email</a>.</p>
+        <p>Thank you for your understanding and patience as we work to resolve the issue.</p>
+        <button id="toggleButton" onclick="toggleLanguage()">Switch to German</button>
+    </div>
+
+    <script>
+        // Automatically detect the user's language on page load
+        window.addEventListener('DOMContentLoaded', detectUserLanguage);
+    </script>
+</body>
+</html>
