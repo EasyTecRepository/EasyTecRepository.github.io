@@ -107,54 +107,35 @@
                     </div>`;
             }
         }
-        var targetDomain = ''; // Variable for the target domain
-
-        // Function to set the target domain based on the current domain
-        function setTargetDomain() {
-            // Replace this with your own domain detection and mapping logic
-            var currentDomain = window.location.hostname;
-
-            // Example: If the current domain is "domain1.com"
-            if (currentDomain === 'domain1.com') {
-                targetDomain = 'https://domain1.com'; // Set the target domain accordingly
-            } else if (currentDomain === 'domain2.com') {
-                targetDomain = 'https://domain2.com'; // Set the target domain accordingly
-            }
-            // Add more domain mappings here
-
-            // If no matching domain is found, set a default target domain
-            if (targetDomain === '') {
-                targetDomain = 'https://example.com'; // Example of a default target domain
-            }
+        // Funktion zur Überprüfung, ob die Seite von einer anderen Seite verlinkt wurde
+        function pageAccessedFromLink() {
+            return document.referrer !== '' && document.referrer !== window.location.href;
         }
 
-        // Function for automatic redirection every two minutes
+        // Funktion für die automatische Weiterleitung alle zwei Minuten
         function automaticRedirect() {
-            // Check if the page was accessed from a different domain
-            if (window.location.hostname !== targetDomain) {
-                // Redirect to the target domain
-                window.location.href = targetDomain;
+            // Überprüfe, ob die Seite von einer anderen Seite verlinkt wurde
+            if (pageAccessedFromLink()) {
+                // Weiterleitung zur vorherigen Seite
+                window.history.back();
             } else {
-                // Increase the count of redirections
+                // Erhöhe den Zähler für die Anzahl der Weiterleitungen
                 redirectCount++;
 
-                // Check if the maximum number of redirections is reached (e.g., 10 times)
+                // Überprüfe, ob die maximale Anzahl an Weiterleitungen erreicht ist (z.B., 10 Mal)
                 if (redirectCount <= 10) {
-                    // Refresh the page after two minutes
+                    // Aktualisiere die Seite nach zwei Minuten
                     setTimeout(function() {
                         window.location.reload();
-                    }, 120000); // 120,000 milliseconds equals two minutes
+                    }, 10000); // 120.000 Millisekunden entsprechen zwei Minuten
                 }
             }
         }
 
-        var redirectCount = 0; // Counter for the number of redirections
+        var redirectCount = 0; // Zähler für die Anzahl der Weiterleitungen
 
-        // Set the target domain based on the current domain
-        setTargetDomain();
-
-        // Set the timer for the initial automatic redirection
-        setTimeout(automaticRedirect, 120000); // 120,000 milliseconds equals two minutes
+        // Setze den Timer für die erste automatische Weiterleitung
+        setTimeout(automaticRedirect, 120000); // 120.000 Millisekunden entsprechen zwei Minuten
     </script>
 </head>
 <body>
