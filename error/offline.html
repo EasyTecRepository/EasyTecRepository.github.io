@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<!--This code was written for Easy Tec by ChatGPT-->
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -36,6 +35,7 @@
                 document.getElementById('message').innerHTML = `
                     <div class="container">
                         <h1>Aktuell nicht erreichbar</h1>
+                        <p>Sie wurden umgeleitet...</p>
                         <p>Wir entschuldigen uns für die Unannehmlichkeiten, aber diese Website ist aufgrund von Störungen derzeit nicht verfügbar.</p>
                         <p>Wir arbeiten hart daran, das Problem zu beheben. Sie können den aktuellen Status jederzeit auf unserer <a target="_blank" href="https://easytecstatus.statuspage.io/">Statusseite</a> prüfen.</p>
                         <p>Diese Seite wird alle zwei Minuten automatisch aktualisiert, sodass Sie sofort benachrichtigt werden, wenn die Website wieder online ist.</p>
@@ -50,6 +50,7 @@
                 document.getElementById('message').innerHTML = `
                     <div class="container">
                         <h1>Currently Unavailable</h1>
+                        <p>You've been redirected...</p>
                         <p>We apologize for the inconvenience, but this website is currently unavailable due to disruptions.</p>
                         <p>We are working diligently to resolve the issue. You can check the current status anytime on our <a target="_blank" href="https://easytecstatus.statuspage.io/">status page</a>.</p>
                         <p>This page will automatically refresh every two minutes so that you will be promptly notified when the website is back online.</p>
@@ -64,6 +65,7 @@
                 document.getElementById('message').innerHTML = `
                     <div class="container">
                         <h1>Currently Unavailable</h1>
+                        <p>You've been redirected...</p>
                         <p>We apologize for the inconvenience, but this website is currently unavailable due to disruptions.</p>
                         <p>We are working diligently to resolve the issue. You can check the current status anytime on our <a target="_blank" href="https://easytecstatus.statuspage.io/">status page</a>.</p>
                         <p>This page will automatically refresh every two minutes so that you will be promptly notified when the website is back online.</p>
@@ -81,6 +83,7 @@
                 document.getElementById('message').innerHTML = `
                     <div class="container">
                         <h1>Aktuell nicht erreichbar</h1>
+                        <p>Sie wurden umgeleitet...</p>
                         <p>Wir entschuldigen uns für die Unannehmlichkeiten, aber diese Website ist aufgrund von Störungen derzeit nicht verfügbar.</p>
                         <p>Wir arbeiten hart daran, das Problem zu beheben. Sie können den aktuellen Status jederzeit auf unserer <a target="_blank" href="https://easytecstatus.statuspage.io/">Statusseite</a> prüfen.</p>
                         <p>Diese Seite wird alle zwei Minuten automatisch aktualisiert, sodass Sie sofort benachrichtigt werden, wenn die Website wieder online ist.</p>
@@ -93,6 +96,7 @@
                 document.getElementById('message').innerHTML = `
                     <div class="container">
                         <h1>Currently Unavailable</h1>
+                        <p>You've been redirected...</p>
                         <p>We apologize for the inconvenience, but this website is currently unavailable due to disruptions.</p>
                         <p>We are working diligently to resolve the issue. You can check the current status anytime on our <a target="_blank" href="https://easytecstatus.statuspage.io/">status page</a>.</p>
                         <p>This page will automatically refresh every two minutes so that you will be promptly notified when the website is back online.</p>
@@ -113,7 +117,7 @@
 
         // Function to trigger redirection every two minutes
         function startAutomaticRedirection() {
-            setTimeout(redirectToPreviousPage, 120000); // 120000 milliseconds equals 2 minutes
+            setTimeout(redirectToPreviousPage, 1000); // 120000 milliseconds equals 2 minutes
         }
         // Start automatic redirection when the page loads
         startAutomaticRedirection();
