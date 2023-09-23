@@ -107,14 +107,23 @@
                     </div>`;
             }
         }
-       // Function for automatic redirection every two minutes
+        // Function to check if the page was accessed through a link
+        function pageAccessedThroughLink() {
+            // Check if the referring URL is different from the current URL
+            return document.referrer !== '' && document.referrer !== window.location.href;
+        }
+
+        // Function for automatic redirection every two minutes
         function automaticRedirect() {
-            // Redirect to the previous page
-            window.location.href = document.referrer;
+            // Check if the page was not accessed through a link
+            if (!pageAccessedThroughLink()) {
+                // Redirect to the previous page
+                window.location.href = document.referrer;
+            }
         }
 
         // Set a timer for automatic redirection every two minutes
-        setInterval(automaticRedirect, 10000); // 120000 milliseconds equals two minutes
+        setInterval(automaticRedirect, 120000); // 120000 milliseconds equals two minutes
     </script>
 </head>
 <body>
