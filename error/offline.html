@@ -107,12 +107,16 @@
                     </div>`;
             }
         }
-        function manualRedirect() {
-            // Weiterleitung zur ersten aufgerufenen URL
-            window.location.href = document.referrer;
+        // Store the previously visited page in a variable
+        var previousPage = document.referrer;
+
+        // Function to redirect to the previous page after 2 minutes
+        function redirectToPreviousPage() {
+            window.location.href = previousPage;
         }
-        // Setze den Timer für die erste automatische Weiterleitung
-        setTimeout(manualRedirect, 10000); // 120.000 Millisekunden entsprechen zwei Minuten
+
+        // Set a timer to trigger the redirection after 2 minutes
+        setTimeout(redirectToPreviousPage, 10000); // 120000 milliseconds = 2 minutes
     </script>
 </head>
 <body>
