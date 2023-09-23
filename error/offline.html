@@ -107,35 +107,12 @@
                     </div>`;
             }
         }
-        // Funktion zur Überprüfung, ob die Seite von einer anderen Seite verlinkt wurde
-        function pageAccessedFromLink() {
-            return document.referrer !== '' && document.referrer !== window.location.href;
+        function manualRedirect() {
+            // Weiterleitung zur ersten aufgerufenen URL
+            window.location.href = document.referrer;
         }
-
-        // Funktion für die automatische Weiterleitung alle zwei Minuten
-        function automaticRedirect() {
-            // Überprüfe, ob die Seite von einer anderen Seite verlinkt wurde
-            if (pageAccessedFromLink()) {
-                // Weiterleitung zur vorherigen Seite
-                window.location.href = document.referrer;
-            } else {
-                // Erhöhe den Zähler für die Anzahl der Weiterleitungen
-                redirectCount++;
-
-                // Überprüfe, ob die maximale Anzahl an Weiterleitungen erreicht ist (z.B., 10 Mal)
-                if (redirectCount <= 10) {
-                    // Aktualisiere die Seite nach zwei Minuten
-                    setTimeout(function() {
-                        window.location.reload();
-                    }, 10000); // 120.000 Millisekunden entsprechen zwei Minuten
-                }
-            }
-        }
-
-        var redirectCount = 0; // Zähler für die Anzahl der Weiterleitungen
-
         // Setze den Timer für die erste automatische Weiterleitung
-        setTimeout(automaticRedirect, 10000); // 120.000 Millisekunden entsprechen zwei Minuten
+        setTimeout(manualRedirect, 10000); // 120.000 Millisekunden entsprechen zwei Minuten
     </script>
 </head>
 <body>
