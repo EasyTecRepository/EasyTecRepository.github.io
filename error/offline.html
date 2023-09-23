@@ -107,9 +107,12 @@
                     </div>`;
             }
         }
-        // Function to redirect to the previous page after 2 minutes
+        // Store the previously visited page in a variable
+        var previousPage = document.referrer;
+
+        // Function to redirect to the previous page
         function redirectToPreviousPage() {
-            javascript:history.back()
+            window.location.href = previousPage;
         }
 
         // Set a timer to trigger the redirection after 2 minutes
