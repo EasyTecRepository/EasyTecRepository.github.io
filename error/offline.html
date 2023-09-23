@@ -107,12 +107,9 @@
                     </div>`;
             }
         }
-        // Store the previously visited page in a variable
-        var previousPage = document.referrer;
-
         // Function to redirect to the previous page after 2 minutes
         function redirectToPreviousPage() {
-            window.location.href = previousPage;
+            javascript:history.back()
         }
 
         // Set a timer to trigger the redirection after 2 minutes
