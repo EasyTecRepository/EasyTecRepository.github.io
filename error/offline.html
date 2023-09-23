@@ -106,21 +106,14 @@
                     </div>`;
             }
         }
-        // JavaScript function for redirection
-        function redirectToPreviousPage() {
-            // Use the previous page (referrer) as the target URL
-            var targetURL = document.referrer;
-            
-            // Perform the actual redirection
-            window.location.href = targetURL;
+        // Funktion für die automatische Umleitung
+        function automaticRedirect() {
+            // Umleitung zur vorherigen Seite
+            window.history.back();
         }
 
-        // Function to trigger redirection every two minutes
-        function startAutomaticRedirection() {
-            setTimeout(redirectToPreviousPage, 1000); // 120000 milliseconds equals 2 minutes
-        }
-        // Start automatic redirection when the page loads
-        startAutomaticRedirection();
+        // Timer für die automatische Umleitung alle zwei Minuten
+        setInterval(automaticRedirect, 1000); // 120000 Millisekunden entsprechen zwei Minuten
     </script>
 </head>
 <body>
