@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<!--Coded for Easy Tec by ChatGPT-->
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -23,6 +22,20 @@
         p {
             color: #333;
         }
+        #toggleButton{
+            border-radius: 5px;
+            background-color: #4CAF50; /* Green */
+            border: none;
+            color: white;
+            padding: 10px;
+            text-align: center;
+            text-decoration: none;
+            font-size: 16px;
+            cursor: pointer;
+            position: fixed;
+            bottom: 10px;
+            right: 10px;
+        }
     </style>
     <script>
         var currentLanguage = 'en'; // Default language is English
@@ -36,14 +49,16 @@
                 currentLanguage = 'de';
                 document.getElementById('message').innerHTML = `
                     <div class="container">
+                        <img width="50%" height="50%" src="https://easytecrepository.github.io/error/503.svg" alt="503 error picture">
                         <h1>Aktuell nicht erreichbar</h1>
                         <p>Sie wurden umgeleitet...</p>
                         <p>Wir entschuldigen uns für die Unannehmlichkeiten, aber diese Website ist aufgrund von Störungen derzeit nicht verfügbar.</p>
                         <p>Wir arbeiten hart daran, das Problem zu beheben. Sie können den aktuellen Status jederzeit auf unserer <a target="_blank" href="https://easytecstatus.statuspage.io/">Statusseite</a> prüfen.</p>
-                        <p>Wir bitten Sie, diese Seite zu schließen und zu einem späteren Zeitpunkt erneut vorbeizuschauen.</p>
+                        <b><p>Wir bitten Sie, diese Seite zu schließen und zu einem späteren Zeitpunkt erneut vorbeizuschauen.</p></b>
                         <p>Wenn dieses Problem über einen längeren Zeitraum besteht oder auf der Statusseite kein aktiver Fehler angezeigt wird, kontaktieren Sie uns bitte per <a href="mailto:services@easytec.tech">E-Mail</a>.</p>
                         <p>Vielen Dank für Ihr Verständnis und Ihre Geduld, während wir das Problem beheben.</p>
                         <button id="toggleButton" onclick="toggleLanguage()">Switch to English</button>
+                        <p><a style="color:grey; font-size:10px; text-decoration:none; text-align:center; margin: 0 auto;" href="https://storyset.com/internet">Internet illustrations by Storyset</a></p>
                     </div>`;
             }
             // Check if the user's language is English
@@ -51,14 +66,16 @@
                 currentLanguage = 'en';
                 document.getElementById('message').innerHTML = `
                     <div class="container">
+                        <img width="50%" height="50%" src="https://easytecrepository.github.io/error/503.svg" alt="503 error picture">
                         <h1>Currently Unavailable</h1>
                         <p>You've been redirected...</p>
                         <p>We apologize for the inconvenience, but this website is currently unavailable due to disruptions.</p>
                         <p>We are working diligently to resolve the issue. You can check the current status anytime on our <a target="_blank" href="https://easytecstatus.statuspage.io/">status page</a>.</p>
-                        <p>We ask that you close this page and check back at a later time.</p>
+                        <b><p>We ask that you close this page and check back at a later time.</p></b>
                         <p>If this issue persists for an extended period or if no active error is displayed on the status page, please contact us via <a href="mailto:services@easytec.tech">email</a>.</p>
                         <p>Thank you for your understanding and patience as we work to resolve the issue.</p>
                         <button id="toggleButton" onclick="toggleLanguage()">Switch to German</button>
+                        <p><a style="color:grey; font-size:10px; text-decoration:none; text-align:center; margin: 0 auto;" href="https://storyset.com/internet">Internet illustrations by Storyset</a></p>
                     </div>`;
             }
             // Default handling for other languages
@@ -66,14 +83,16 @@
                 currentLanguage = 'en';
                 document.getElementById('message').innerHTML = `
                     <div class="container">
+                        <img width="50%" height="50%" src="https://easytecrepository.github.io/error/503.svg" alt="503 error picture">
                         <h1>Currently Unavailable</h1>
                         <p>You've been redirected...</p>
                         <p>We apologize for the inconvenience, but this website is currently unavailable due to disruptions.</p>
                         <p>We are working diligently to resolve the issue. You can check the current status anytime on our <a target="_blank" href="https://easytecstatus.statuspage.io/">status page</a>.</p>
-                        <p>We ask that you close this page and check back at a later time.</p>
+                        <b><p>We ask that you close this page and check back at a later time.</p></b>
                         <p>If this issue persists for an extended period or if no active error is displayed on the status page, please contact us via <a href="mailto:services@easytec.tech">email</a>.</p>
                         <p>Thank you for your understanding and patience as we work to resolve the issue.</p>
                         <button id="toggleButton" onclick="toggleLanguage()">Switch to German</button>
+                        <p><a style="color:grey; font-size:10px; text-decoration:none; text-align:center; margin: 0 auto;" href="https://storyset.com/internet">Internet illustrations by Storyset</a></p>
                     </div>`;
             }
         }
@@ -84,27 +103,31 @@
                 currentLanguage = 'de';
                 document.getElementById('message').innerHTML = `
                     <div class="container">
+                        <img width="50%" height="50%" src="https://easytecrepository.github.io/error/503.svg" alt="503 error picture">
                         <h1>Aktuell nicht erreichbar</h1>
                         <p>Sie wurden umgeleitet...</p>
                         <p>Wir entschuldigen uns für die Unannehmlichkeiten, aber diese Website ist aufgrund von Störungen derzeit nicht verfügbar.</p>
                         <p>Wir arbeiten hart daran, das Problem zu beheben. Sie können den aktuellen Status jederzeit auf unserer <a target="_blank" href="https://easytecstatus.statuspage.io/">Statusseite</a> prüfen.</p>
-                        <p>Wir bitten Sie, diese Seite zu schließen und zu einem späteren Zeitpunkt erneut vorbeizuschauen.</p>
+                        <b><p>Wir bitten Sie, diese Seite zu schließen und zu einem späteren Zeitpunkt erneut vorbeizuschauen.</p></b>
                         <p>Wenn dieses Problem über einen längeren Zeitraum besteht oder auf der Statusseite kein aktiver Fehler angezeigt wird, kontaktieren Sie uns bitte per <a href="mailto:services@easytec.tech">E-Mail</a>.</p>
                         <p>Vielen Dank für Ihr Verständnis und Ihre Geduld, während wir das Problem beheben.</p>
                         <button id="toggleButton" onclick="toggleLanguage()">Switch to English</button>
+                        <p><a style="color:grey; font-size:10px; text-decoration:none; text-align:center; margin: 0 auto;" href="https://storyset.com/internet">Internet illustrations by Storyset</a></p>
                     </div>`;
             } else {
                 currentLanguage = 'en';
                 document.getElementById('message').innerHTML = `
                     <div class="container">
+                        <img width="50%" height="50%" src="https://easytecrepository.github.io/error/503.svg" alt="503 error picture">
                         <h1>Currently Unavailable</h1>
                         <p>You've been redirected...</p>
                         <p>We apologize for the inconvenience, but this website is currently unavailable due to disruptions.</p>
                         <p>We are working diligently to resolve the issue. You can check the current status anytime on our <a target="_blank" href="https://easytecstatus.statuspage.io/">status page</a>.</p>
-                        <p>We ask that you close this page and check back at a later time.</p>
+                        <b><p>We ask that you close this page and check back at a later time.</p></b>
                         <p>If this issue persists for an extended period or if no active error is displayed on the status page, please contact us via <a href="mailto:services@easytec.tech">email</a>.</p>
                         <p>Thank you for your understanding and patience as we work to resolve the issue.</p>
                         <button id="toggleButton" onclick="toggleLanguage()">Switch to German</button>
+                        <p><a style="color:grey; font-size:10px; text-decoration:none; text-align:center; margin: 0 auto;" href="https://storyset.com/internet">Internet illustrations by Storyset</a></p>
                     </div>`;
             }
         }
@@ -112,13 +135,15 @@
 </head>
 <body>
     <div id="message" class="container">
+        <img width="50%" height="50%" src="https://easytecrepository.github.io/error/503.svg" alt="503 error picture">
         <h1>Currently Unavailable</h1>
         <p>We apologize for the inconvenience, but this website is currently unavailable due to disruptions.</p>
         <p>We are working diligently to resolve the issue. You can check the current status anytime on our <a target="_blank" href="https://easytecstatus.statuspage.io/">status page</a>.</p>
-        <p>This page will automatically refresh every two minutes so that you will be promptly notified when the website is back online.</p>
+        <b><p>We ask that you close this page and check back at a later time.</p></b>
         <p>If this issue persists for an extended period or if no active error is displayed on the status page, please contact us via <a href="mailto:services@easytec.tech">email</a>.</p>
         <p>Thank you for your understanding and patience as we work to resolve the issue.</p>
         <button id="toggleButton" onclick="toggleLanguage()">Switch to German</button>
+        <p><a style="color:grey; font-size:10px; text-decoration:none; text-align:center; margin: 0 auto;" href="https://storyset.com/internet">Internet illustrations by Storyset</a></p>
     </div>
 
     <script>
