@@ -43,7 +43,6 @@
                         <p>Wenn dieses Problem über einen längeren Zeitraum besteht oder auf der Statusseite kein aktiver Fehler angezeigt wird, kontaktieren Sie uns bitte per <a href="mailto:services@easytec.tech">E-Mail</a>.</p>
                         <p>Vielen Dank für Ihr Verständnis und Ihre Geduld, während wir das Problem beheben.</p>
                         <button id="toggleButton" onclick="toggleLanguage()">Switch to English</button>
-                        <button id="redirectButton">Go Back</button>
                     </div>`;
             }
             // Check if the user's language is English
@@ -59,7 +58,6 @@
                         <p>If this issue persists for an extended period or if no active error is displayed on the status page, please contact us via <a href="mailto:services@easytec.tech">email</a>.</p>
                         <p>Thank you for your understanding and patience as we work to resolve the issue.</p>
                         <button id="toggleButton" onclick="toggleLanguage()">Switch to German</button>
-                        <button id="redirectButton">Go Back</button>
                     </div>`;
             }
             // Default handling for other languages
@@ -75,7 +73,6 @@
                         <p>If this issue persists for an extended period or if no active error is displayed on the status page, please contact us via <a href="mailto:services@easytec.tech">email</a>.</p>
                         <p>Thank you for your understanding and patience as we work to resolve the issue.</p>
                         <button id="toggleButton" onclick="toggleLanguage()">Switch to German</button>
-                        <button id="redirectButton">Go Back</button>
                     </div>`;
             }
         }
@@ -94,7 +91,6 @@
                         <p>Wenn dieses Problem über einen längeren Zeitraum besteht oder auf der Statusseite kein aktiver Fehler angezeigt wird, kontaktieren Sie uns bitte per <a href="mailto:services@easytec.tech">E-Mail</a>.</p>
                         <p>Vielen Dank für Ihr Verständnis und Ihre Geduld, während wir das Problem beheben.</p>
                         <button id="toggleButton" onclick="toggleLanguage()">Switch to English</button>
-                        <button id="redirectButton">Go Back</button>
                     </div>`;
             } else {
                 currentLanguage = 'en';
@@ -108,20 +104,17 @@
                         <p>If this issue persists for an extended period or if no active error is displayed on the status page, please contact us via <a href="mailto:services@easytec.tech">email</a>.</p>
                         <p>Thank you for your understanding and patience as we work to resolve the issue.</p>
                         <button id="toggleButton" onclick="toggleLanguage()">Switch to German</button>
-                        <button id="redirectButton">Go Back</button>
                     </div>`;
             }
         }
-        // Store the previously visited page in a variable
-        var previousPage = document.referrer;
-
-        // Function to redirect to the previous page
-        function redirectToPreviousPage() {
-            window.location.href = previousPage;
+        // Check if the referrer information is available
+        if (document.referrer) {
+          // Store the referrer URL in a variable
+          var referrerURL = document.referrer;
+          console.log("Referrer URL: " + referrerURL);
+        } else {
+          console.log("No referrer found");
         }
-
-        // Attach a click event listener to the button
-        document.getElementById('redirectButton').addEventListener('click', redirectToPreviousPage);
     </script>
 </head>
 <body>
@@ -133,7 +126,6 @@
         <p>If this issue persists for an extended period or if no active error is displayed on the status page, please contact us via <a href="mailto:services@easytec.tech">email</a>.</p>
         <p>Thank you for your understanding and patience as we work to resolve the issue.</p>
         <button id="toggleButton" onclick="toggleLanguage()">Switch to German</button>
-        <button id="redirectButton">Go Back</button>
     </div>
 
     <script>
